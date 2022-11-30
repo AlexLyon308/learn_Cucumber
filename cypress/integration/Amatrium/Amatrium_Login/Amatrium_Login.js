@@ -54,13 +54,8 @@ When('End-user types in username as {string} and password as {string}', (usernam
 
 And('End-user clicks on login button', () => {
     cy
-        .get(AmatriumElements.loginbutton)
-        .should((item) => {
-            expect(item).to.exist
-            expect(item).to.have.text('Login')
-        });
-
-        cy.get('.css-mx6vab').click();
+        
+        cy.get(AmatriumElements.loginbutton).click();
 });
 
 Then('End-user successfully logins to the Amatrium website and sees the main page', () => {
