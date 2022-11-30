@@ -1,25 +1,45 @@
 import AmatriumElements from './Amatrium_Elements.js';
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
+
 Given('End-user visits Amatrium login page via browser', () => {
-    cy.visit('dev.amatrium.com');
+    cy.visit('dev.amatrium.com')
 })
 
-When('End-user clicks at web element as {string} ', (webElement) => {
-    cy.get(webElement).click()
+
+//Scenario: End-user navigate to Privacy Policy page
+
+When('End-user clicks at web element as privacyPolicyOpenButton', function() {
+    expect(AmatriumElements.privacyPolicyOpenButton, 'Term Open button should be available').to.exist
+    cy.get(AmatriumElements.privacyPolicyOpenButton).click()
 });
 
-And('End-user checks available web element {string} to have text {string} ', (webElement,requiredText) => {
-    cy.get(webElement).should('have.text', requiredText)
+And('End-user checks available web element privacyPolicyPanelHeader to have text Privacy Policy ', () => {
+    cy.get(AmatriumElements.privacyPolicyPanelHeader).should('have.text', 'Privacy Policy').click()
 });
 
-Then('End-user clicks at web element as {string} ', (webElement) => {
-    cy.get(webElement).click()
+Then('End-user clicks at web element as privacyPolicyCloseButton to close panel', () => {
+    expect(AmatriumElements.privacyPolicyCloseButton, 'Privacy Policy Close button should be available').to.exist
+    cy.get(AmatriumElements.privacyPolicyCloseButton).click()
+});
+
+//Scenario: End-user navigate to Term page
+When('End-user clicks at web element as termOpenButton', () => {
+    expect(AmatriumElements.termOpenButton, 'Term Open button should be available').to.exist
+    cy.get(AmatriumElements.termOpenButton).click()
+});
+
+And('End-user checks Term panel to have text Terms of Service', () => {
+    cy.get('#chakra-modal--header-5').should('have.text', 'Terms of Service')
+});
+
+Then('End-user clicks at web element as termCloseButton to close panel', () => {
+    expect(AmatriumElements.termCloseButton, 'Privacy Policy Close button should be available').to.exist
+    cy.get(AmatriumElements.termCloseButton).click()
 });
 
 
-
-
+//
 When('End-user types in username as {string} and password as {string}', (username, password) => {
     cy
         .get(AmatriumElements.emailAddressField)
