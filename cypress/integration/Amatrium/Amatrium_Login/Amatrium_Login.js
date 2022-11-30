@@ -1,5 +1,5 @@
 import AmatriumElements from './Amatrium_Elements.js';
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
 Given('End-user visits Amatrium login page via browser', () => {
     cy.visit('dev.amatrium.com');
