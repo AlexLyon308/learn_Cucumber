@@ -4,8 +4,8 @@ Feature: Amatrium_Login
 
         Given End-user visits Amatrium login page via browser
         When End-user clicks at web element as '<AmatriumElements.privacyPolicyOpenButton>' 
-        And End-user check available web element '<AmatriumElements.privacyPolicyPanelHeader>' to have text 'Privacy Policy'
-        Then End-user clicks at web element as  '<AmatriumElements.privacyPolicyOpenButton>'
+        And End-user checks available web element '<AmatriumElements.privacyPolicyPanelHeader>' to have text 'Privacy Policy'
+        Then End-user clicks at web element as '<AmatriumElements.privacyPolicyOpenButton>'
 
     Scenario Outline: End-user navigate to Term page
 
