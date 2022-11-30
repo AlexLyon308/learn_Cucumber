@@ -15,7 +15,7 @@ When('End-user clicks at web element as privacyPolicyOpenButton', () => {
 });
 
 And('End-user checks available web element privacyPolicyPanelHeader to have text Privacy Policy', () => {
-    cy.get(AmatriumElements.privacyPolicyPanelHeader,).should('have.text', 'Privacy Policy').click()
+    cy.get(AmatriumElements.privacyPolicyPanelHeader).should('have.text', 'Privacy Policy').click()
 });
 
 Then('End-user clicks at web element as privacyPolicyCloseButton to close panel', () => {
@@ -40,7 +40,7 @@ Then('End-user clicks at web element as termCloseButton to close panel', () => {
 
 
 //
-When('End-user types in username as {string} and password as {string}', (username, password) => {
+When('End-user types in username as {string} and password as {string}', (username,password) => {
     cy
         .get(AmatriumElements.emailAddressField)
         .type(username)
@@ -60,9 +60,7 @@ And('End-user clicks on login button', () => {
             expect(item).to.have.text('Login')
         });
 
-    cy
-        .get(AmatriumElements.loginbutton)
-        .click();
+        cy.get('.css-mx6vab').click();
 });
 
 Then('End-user successfully logins to the Amatrium website and sees the main page', () => {
