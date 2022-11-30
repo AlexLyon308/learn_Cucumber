@@ -14,8 +14,8 @@ When('End-user clicks at web element as privacyPolicyOpenButton', () => {
     cy.get(AmatriumElements.privacyPolicyOpenButton).click()
 });
 
-And('End-user checks available web element privacyPolicyPanelHeader to have text Privacy Policy ', () => {
-    cy.get(AmatriumElements.privacyPolicyPanelHeader).should('have.text', 'Privacy Policy').click()
+And('End-user checks available web element privacyPolicyPanelHeader to have text Privacy Policy', () => {
+    cy.get(AmatriumElements.privacyPolicyPanelHeader,).should('have.text', 'Privacy Policy').click()
 });
 
 Then('End-user clicks at web element as privacyPolicyCloseButton to close panel', () => {
