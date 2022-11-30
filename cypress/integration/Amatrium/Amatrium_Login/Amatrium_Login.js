@@ -9,7 +9,7 @@ Given('End-user visits Amatrium login page via browser', () => {
 
 //Scenario: End-user navigate to Privacy Policy page
 
-When('End-user clicks at web element as privacyPolicyOpenButton', function() {
+When('End-user clicks at web element as privacyPolicyOpenButton', () => {
     expect(AmatriumElements.privacyPolicyOpenButton, 'Term Open button should be available').to.exist
     cy.get(AmatriumElements.privacyPolicyOpenButton).click()
 });
