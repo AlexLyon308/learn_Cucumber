@@ -8,8 +8,12 @@ Scenario Outline: End-user logins to Amatrium Website
             | username | password |
             | britishcolumbia247@gmail.com    | w7ekg2w |
 
+Feature: Amatrium_Login
 
-            When End-user clicks at web element as '<AmatriumElements.privacyPolicyOpenButton>' 
+    Scenario Outline: End-user navigate to Privacy Policy page
+
+        Given End-user visits Amatrium login page via browser
+        When End-user clicks at web element as '<AmatriumElements.privacyPolicyOpenButton>' 
         And End-user checks available web element '<AmatriumElements.privacyPolicyPanelHeader>' to have text 'Privacy Policy'
         Then End-user clicks at web element as '<AmatriumElements.privacyPolicyOpenButton>'
 
