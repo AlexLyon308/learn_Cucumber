@@ -9,7 +9,7 @@ When('End-user clicks at web element as {string} ', (webElement) => {
     cy.get(webElement).click()
 });
 
-And('End-user check available web element {string} to have text {string} ', (webElement,requiredText) => {
+And('End-user checks available web element {string} to have text {string} ', (webElement,requiredText) => {
     cy.get(webElement).should('have.text', requiredText)
 });
 
