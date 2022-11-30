@@ -17,7 +17,7 @@ npm install --save-dev cypress-cucumber-preprocessor
 4.	API references
 
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
+To open cypress to run test cases,  use these command in terminal :
+npx cypress open 
 # Contribute
 TODO: Explain how other users and developers can contribute to make your code better. 
