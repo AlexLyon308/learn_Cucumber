@@ -11,7 +11,8 @@ export default class AmatriumElements {
     static passWordField = '#password';
     static passWordHideButton = '.chakra-input__right-element > .chakra-button';
     static privacyPolicyPanelHeader = '#chakra-modal--header-5';
-    static loginbutton = 'form > button.chakra-button';
+    static termHeader = '#chakra-modal--header-5' ;
+    static loginButton = 'form > button.chakra-button';
 
     //Main screen elements 
     static mainScreen_label 

@@ -1,11 +1,17 @@
 Feature: Amatrium_Login
 
-    Scenario Outline: End-user logins to Amatrium Website
+    Scenario Outline: End-user navigate to Privacy Policy page
 
         Given End-user visits Amatrium login page via browser
-        When End-user types in username as '<username>' and password as '<password>'
-        And End-user clicks on login button
-        Then End-user successfully logins to the Amatrium website and sees the main page 
-        Examples:
-            | username | password |
-            | britishcolumbia247@gmail.com    | w7ekg2w |
+        When End-user clicks at web element as '<AmatriumElements.privacyPolicyOpenButton>' 
+        And End-user check available web element '<AmatriumElements.privacyPolicyPanelHeader>' to have text 'Privacy Policy'
+        Then End-user clicks at web element as  '<AmatriumElements.privacyPolicyOpenButton>'
+
+    Scenario Outline: End-user navigate to Term page
+
+        Given End-user visits Amatrium login page via browser
+        When End-user clicks at web element as '<AmatriumElements.termOpenButton>' 
+        And End-user check available web element '<AmatriumElements.termHeader>' to have 'Terms of Service'
+        Then End-user clicks at web element as  '<AmatriumElements.termCloseButton>'
+
+    
