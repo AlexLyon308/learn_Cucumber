@@ -6,7 +6,6 @@ Given('End-user visits Amatrium login page via browser', () => {
     cy.visit('dev.amatrium.com')
 })
 
-
 //Scenario: End-user navigate to Privacy Policy page
 
 When('End-user clicks at web element as privacyPolicyOpenButton', () => {
@@ -38,8 +37,7 @@ Then('End-user clicks at web element as termCloseButton to close panel', () => {
     cy.get(AmatriumElements.termCloseButton).click()
 });
 
-
-//
+//Scenario Outline: End-user logins to Amatrium Website
 When('End-user types in username as {string} and password as {string}', (username,password) => {
     cy
         .get(AmatriumElements.emailAddressField)
@@ -52,9 +50,7 @@ When('End-user types in username as {string} and password as {string}', (usernam
         .should('have.value', 'w7ekg2w');
 })
 
-And('End-user clicks on login button', () => {
-    cy
-        
+And('End-user clicks on login button', () => {      
         cy.get(AmatriumElements.loginbutton).click();
 });
 
@@ -68,3 +64,4 @@ Then('End-user successfully logins to the Amatrium website and sees the main pag
         .find('svg')
         .should('be.visible');
 });
+
